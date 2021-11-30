@@ -1,24 +1,23 @@
-'''
-num1 = int(input("Enter the first number: "))
-action = input("Enter desired action: ")
-num2 = int(input("Enter the second number: "))
+from Question import Question
 
-if action == "+":
-    print(num1 + num2)
-elif action == "-":
-    print(num1 - num2)
-elif action == ":" or action == "/":
-    print(num1/num2)
-else:
-    print(num1*num2)
+question_prompts = [
+    "What color are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
+    "What color are bananas?\n(a) Teal\n(b) Magenta\n(c) Yellow\n\n",
+    "What color are strawberries?\n(a) Yellow\n(b) Red\n(c) Blue\n\n",
+]
 
-x = 2
-print (x == 2)'''
+questions = [
+    Question(question_prompts[0],"a"),
+    Question(question_prompts[1],"c"),
+    Question(question_prompts[2],"b"),
+]
 
-color = input("Enter a color: ")
-plural_noun = input("Enter a plural noun: ")
-celebrity = input("Enter a celebrity: ")
+def run_test(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score += 1
+    print("You've got " + str(score) + "/" + str(len(questions)) + " correct.")
 
-print("Roses are " + color)
-print(plural_noun + " are blue")
-print("I love " + celebrity)
+run_test(questions)
