@@ -1,0 +1,21 @@
+import random
+
+amount = int(input('Enter number: '))
+number = range(1, amount+1)
+winners = random.sample(number, amount)
+
+i = 0
+while True:
+    question = input("Continue? y/n ")
+    if question == 'y':
+        if i == amount - 1:
+            print ("Last attempt!")
+            print(winners[i])
+            break
+        print(winners[i])
+        i += 1
+        
+    else:
+        break
+
+# print(winners)
