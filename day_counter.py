@@ -8,8 +8,8 @@ fd_day = int(input("Enter a day: "))
 
 print("\nEnter the second date")
 sd_year = int(input("Enter a year: "))
-sd_month = int(input("Enter a month: "))
-sd_day = int(input("Enter a day: "))
+sd_month = int(input("Enter a month: ").lstrip('0'))
+sd_day = int(input("Enter a day: ").lstrip('0'))
 
 try:
     fd = date(fd_year, fd_month, fd_day)
